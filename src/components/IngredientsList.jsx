@@ -7,7 +7,7 @@ export default function IngredientsList(props) {
 
     return (
         <section>
-            <h2>Ingredients on hand: </h2>
+            <div className="ingredients-title"> Ingredients </div>
             <ul className="ingredients-list" aria-live="polite">  {ingredientsListItems} </ul>
 
             {/* Get Recipe only loads when Ingredients > 3 */}
