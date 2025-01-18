@@ -1,5 +1,5 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Alegreya", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
@@ -11,6 +11,10 @@ img {
     cursor: pointer;
 }
 
+ul {
+    list-style-type: none;
+}
+
 
 /* Header */
 
@@ -20,8 +24,12 @@ header {
     align-items: center;
     background-color: white;
     height: 100px;
-    gap: 20px;
+    gap: 15px;
     box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+}
+
+header > h1 {
+    margin-bottom: 2px;
 }
 
 
@@ -29,6 +37,29 @@ header {
 
 main {
     padding: 30px 30px;
+    gap: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: salmon;
+
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.intro > div {
+    font-size: 18px;
+    color: black;
 }
 
 .ingredient-form {
@@ -38,30 +69,26 @@ main {
     height: 44px;
 }
 
-.ingredient-form > input {
+.ingredient-form>input {
     border: 1px solid black;
     border-radius: 5px;
     padding: 10px 13px;
     box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 15%);
     flex-grow: 1;
-    min-width: 150px;
-    max-width: 400px;
+    width: 200px;
     outline: none;
 }
 
-.ingredient-form > button {
+.add-btn {
     border: none;
-    border-radius: 5px;
+    border-radius: 100px;
     background: black;
-    color: white;
     cursor: pointer;
-    max-width: 150px;
-    font-size: 0.8rem;
-}
-
-.ingredient-form > button::before {
-    content: "+";
-    margin-right: 2px;
+    width: 92px;
+    height: 45px;
+    font-size: 20px;
+    font-weight: 700;
+    color: salmon;
 }
 
 
@@ -76,9 +103,35 @@ main {
 }
 
 .ingredients-list {
+    display: flex;
+    flex-direction: column;
     padding-right: 20px;
     margin-top: 0px;
-    font-size: 18px;
+    margin-right: 20px;
+    font-size: 20px;
+    gap: 10px;
+}
+
+.ingredient {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 300px;
+    gap: 10px;
+}
+
+.ingredient > button {
+    border: black 2px solid;
+    border-radius: 100px;
+    background: white;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    font-weight: 700;
+    color: salmon;
+    padding: 0;
 }
 
 
@@ -92,37 +145,91 @@ section {
 
 .recipes-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    min-width: 300px;
-    max-width: 500px;
-    height: 120px;
-    background-color: lightgray;
-    border-radius: 5px;
-    padding: 30px;
-    gap: 30px;
+    justify-content: center;
+
+    background-color: salmon;
+
+    width: 300px;
+    height: 150px;
+    margin-top: 30px;
+    border-radius: 10px;
+    gap: 12px;
 }
 
-.recipes-container > button {
-    min-width: 120px;
-    height: 60px;
-    border-radius: 5px;
+.recipes-container > h1 {
+    margin: 0;
+}
+
+.recipes-container>button {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
     cursor: pointer;
     color: white;
-    background-color: salmon;
-    border: 1px solid salmon;
+    background-color: black;
+    border: 1px solid black;
 }
 
-.recipes-container > button:hover {
+.recipes-container>button:hover {
     color: white;
-    background-color: rgb(255, 110, 100);
+    background-color: rgb(44, 44, 44)
 }
 
+
+/* Loading Screen */
+
+.loading-screen {
+    position: absolute;
+    cursor: not-allowed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: salmon;
+    width: 100vw;
+    height: 100vh;
+    top: 0%;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.loading-screen > img {
+    width: 200px;
+    height: 200px;
+}
 
 /* AI Recipe */
 
 .ai-recipe-container {
+    text-align: justify;
     color: black;
     line-height: 28px;
-    font-size: 1.125rem;
+    font-size: 15px;
+}
+
+.ai-recipe-container > img {
+    margin-top: 15px;
+}
+
+.ai-recipe-container > h2 {
+    margin-bottom: 0;
+    color: salmon;
+}
+
+.ai-recipe-container > h1 {
+    text-align: center;
+}
+
+.ai-recipe-container > button {
+    border: none;
+    border-radius: 10px;
+    background: black;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    color: salmon;
 }

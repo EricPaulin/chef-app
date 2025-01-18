@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <header>
             <img src={chefLogo} onClick={ reloadPage }/>
-            <h1> AI Chef </h1>
+            <h1> RoboChef </h1>
         </header>
     )
 }
