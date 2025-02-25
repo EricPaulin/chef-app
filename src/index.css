@@ -118,27 +118,30 @@ main {
     font-size: 20px;
     gap: 25px;
     width: 88vw;
-    max-height: 45vh;
+    max-height: 67vh;
+    max-height: 48vh;
     overflow-y: auto;
 }
 
 @media (max-width: 768px) {
     .ingredients-list,
     .react-markdown {
-        max-height: 45vh;
+        max-height: 60vh;
+        max-height: 48vh;
     }
 }
 
 @media (max-width: 576px){
     .ingredients-list,
     .react-markdown {
-        max-height: 42vh;
+        max-height: 48vh;
     }
 }
 
-@media (max-width: 400px) { /* Smaller phones */
-    .ingredients-list {
-        max-height: 40vh;
+@media (max-width: 400px) {
+    .ingredients-list,
+    .react-markdown {
+        max-height: 42vh;
     }
 }
 
@@ -250,6 +253,7 @@ section .ai-recipe-container {
 
 .ai-recipe-container > img {
     margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .ai-recipe-container > h2 {

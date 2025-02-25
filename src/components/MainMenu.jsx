@@ -45,15 +45,24 @@ export default function MainMenu() {
         // test: check if ingredient added correctly
         //console.log(`Adding ${newIngredient}`)
 
-        // check if ingredient exists already (case senstivie + plurals)
+        // check if invalid ingredient
+        if (newIngredient === " " || newIngredient === "") {
+            setHasError(true)
+            setErrorMsg(`Enter a valid ingredient`)
+            return
+        }
+
+        // check if ingredient already exists (singlular + plural check) 
         const ingredientExists = ingredients.some((existingIngredient) => {
-            //const ingredientTest = newIngredient
+
             const arrayIngredient = existingIngredient.toLowerCase()
             return (
                 newIngredient === arrayIngredient ||
+                newIngredient === arrayIngredient + " " ||
                 newIngredient === arrayIngredient + 's' ||
-                newIngredient === arrayIngredient + "S" ||
-                newIngredient === arrayIngredient + " "
+                newIngredient === arrayIngredient + 's ' ||
+                newIngredient === arrayIngredient.slice(0, -1) ||
+                newIngredient === arrayIngredient.slice(0, -1) + " "
             )
         })
 
