@@ -7,17 +7,16 @@ export default function ChefRecipe(props) {
         window.location.reload();
     }
 
-
     return (
         <section className="ai-recipe-container" aria-live="polite">
-            <img src={chef2}/>
-            <h2> RoboChef thinks... </h2>
-            <ReactMarkdown>
+
+            <h2> RoboChef says... </h2>
+            <img src={chef2} />
+            <ReactMarkdown className="react-markdown">
                 {props.recipe}
             </ReactMarkdown>
 
-            <h1> Try Again with new Ingredients? </h1>
-            <button onClick={ reloadPage }> New Recipe </button>
+            <button onClick={reloadPage}> New Recipe </button>
         </section>
     )
 }

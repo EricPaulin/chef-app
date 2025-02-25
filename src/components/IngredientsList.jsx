@@ -19,13 +19,7 @@ export default function IngredientsList(props) {
     ))
 
     return (
-        <section>
-            {/* Get Recipe only loads when Ingredients > 3 */}
-            {props.ingredients.length > 3 ? <div className="recipes-container">
-                <h1> Ready for a Recipe? </h1>
-                <button onClick={props.getRecipe} > Get Recipe </button>
-            </div> : null}
-            
+        <section>    
             {/* Ingredients List */}
             <div className="ingredients-title"> Ingredients </div>
             <ul className="ingredients-list" aria-live="polite">  
