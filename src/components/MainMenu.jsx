@@ -27,12 +27,36 @@ export default function MainMenu() {
         setIngredients([])
         setAiRecipe(true)
 
-        const recipeMarkdown = await getRecipeFromMistral(ingredients)
-        setRecipe(recipeMarkdown)
+        console.log("hello1")
+        console.log(ingredients)
+
+        // API Try/Catch
+        try {
+            const recipeMarkdown = await getRecipeFromMistral(ingredients)
+            setRecipe(recipeMarkdown)
+            console.log("hello2")
+        }
+        catch (error) {
+            console.log("hello3")
+            setHasError(true)
+            console.error("Error fetching recipe:", error);
+
+            if (error.message.includes("API key")) {
+                setErrorMsg("Invalid API key. Please try again later.")
+            } else if (error.message.includes("network")) {
+                setErrorMsg("Network error. Please check your internet connection.")
+            } else if (error.message.includes("429")) {
+                setErrorMsg("Too many requests. Please wait a moment and try again.")
+            } else {
+                setErrorMsg("Failed to generate recipe. Please try again later.")
+            }
+        }
 
         /* loading screen off + reset ingredients list */
+        finally {
 
-        isLoading(false)
+            isLoading(false)
+        }
     }
 
     // add ingredients to list
